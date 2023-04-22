@@ -5,7 +5,7 @@ const PUT = 'PUT';
 class HttpService{
     constructor(app){
         this.app = app;
-        console.log('class HttpService app',app)
+        //console.log('class HttpService app',app)
     };
 
     postRequest(url, data, headers) {

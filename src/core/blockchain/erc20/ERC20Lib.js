@@ -12,7 +12,7 @@ const ERC20_ABI = require('./erc20_abi');
 //let PROVIDER_URL = process.env.PROVIDER_URL
 //let privateKey = process.env.ETH_PK
 const contractAddress = process.env.ERC20_CONTRACT_ADDRESS   
-const GAS_LIMIT = 30000;
+const GAS_LIMIT = 300000;
 const DECIMALS = 8
 
 

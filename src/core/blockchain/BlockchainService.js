@@ -21,12 +21,12 @@ constructor(app){
         "BNB":bnb
     }
     
-     console.log("libraries",this.libraries);
+     //console.log("libraries",this.libraries);
     
 }
 
    getCurrentLibrary(){
-        console.log("getCurrentLibrary",this.libraries[this.app.getCurrency()])     
+        //console.log("getCurrentLibrary",this.libraries[this.app.getCurrency()])     
         return this.libraries[this.app.getCurrency()]
        }
     

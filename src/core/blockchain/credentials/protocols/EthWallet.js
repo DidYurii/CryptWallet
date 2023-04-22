@@ -8,7 +8,6 @@ class EthWallet extends AbstractCurrencyWallet{
     provideAddress(mnemonic) {
         return new Promise(async(resolve,reject)=>{
             try {
-                console.log("EthWallet provideAddress",mnemonic);
                 const privateKey = await this.providePrivateKey(mnemonic);
                 const address = privKeyToAddressETH(privateKey);
                 return resolve(address);

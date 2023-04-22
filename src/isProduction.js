@@ -1,6 +1,6 @@
    
         const options = ["mainnet", "testnet"];
-        const selectedOption = window.prompt(`Please select the net and Login with your Mnemonic phrase:\n\n${options.join("\n")}`);
+        const selectedOption = window.prompt(`Please select the Network and Login with your Mnemonic phrase:\n\n${options.join("\n")}`);
 
         if (selectedOption === null || !options.includes(selectedOption)) {
             // Display an error message and exit the program
@@ -27,12 +27,6 @@
             }
           }
 
-
-    //mainnet - production net = true
-    //testnet - development net = false
-   console.log('selectedOption', selectedOption)
-   //let net = false ;
-   //console.log('let net', net)
    net = selectedOption=='mainnet'?true: false;
-   console.log(' net =', net)
+   
 module.exports = net

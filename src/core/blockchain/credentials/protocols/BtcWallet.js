@@ -15,16 +15,7 @@ class BtcWallet extends AbstractCurrencyWallet{
         return isProduction?networks.bitcoin:networks.testnet;
         //return networks.testnet
     }
-    // _getDirevationPath(){
-    //     return isProduction?`m/44'/1'/0'/0/0`:`m/44'/0'/0'/0/0`;
-       
-    // }
-    // _getNetwork(){
-    //     return isProduction?networks.testnet:networks.bitcoin;
-    // }
-
-
-
+   
     provideAddress(mnemonic) {
         return new Promise(async(resolve,reject)=>{
             try {

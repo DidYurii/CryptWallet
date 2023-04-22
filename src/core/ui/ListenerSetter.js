@@ -43,42 +43,7 @@ class ListenerSetter{
         })
     }
 
-//    setChangeNetListener(){
-   
-//         // main menu change currency
-//         const elements = document.querySelectorAll("#net");
-//         //console.log(elements)   
-//         for (let i = 0; i < elements.length; i++) {
-//             elements[i].addEventListener("click", (event) => {
 
-//                 for (let t = 0; t < elements.length; t++) {
-//                     if (elements[t].classList.contains("text-green-500")) {
-//                         elements[t].classList.replace("text-green-500", "text-gray-500");
-//                         elements[t].classList.remove("border-b-4","border-green-500" );
-//                        }  
-                       
-//                     //    if (elementsM[t].classList.contains("bg-green-500")) {
-//                     //     elementsM[t].classList.remove('bg-green-500' );
-//                     //       }                      
-//                  }
-                
-               
-//                       elements[i].classList.replace("text-gray-500", "text-green-500");
-//                       elements[i].classList.add("border-b-4","border-green-500" );
-
-//                       //elementsM[i].classList.add('bg-green-500' );
-                      
-//                       let el = event.target;
-//                       //console.log(el) 
-//                       let net = el.getAttribute("data-value")
-//                      console.log('el.getAttribute("data-value")', net);
-//                       this.app.changeNet(net);
-//                       //console.log("currency=",currency);            
-                
-//             })
-        
-//         }
-//    }
 
   
  
@@ -170,11 +135,8 @@ class ListenerSetter{
           }
     setImportMnemonicOnInputListener(){
         
-          //let mnemonic = document.getElementById("import-mnemonic").value
-          document.getElementById("submit-mnemonic").addEventListener("click",async()=>{
-            
-            
-            this.submitMnemonic()
+             document.getElementById("submit-mnemonic").addEventListener("click",async()=>{
+             this.submitMnemonic()
             document.getElementById('loginForm').classList.toggle('hidden')
             
         })
