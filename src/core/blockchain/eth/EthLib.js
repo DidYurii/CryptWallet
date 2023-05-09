@@ -15,7 +15,7 @@ let GasLimit = 21000
     constructor(app){
        
         let PROVIDER_URL = isProduction?PROVIDER_URL_MAIN:PROVIDER_URL_TEST
-        //console.log('let PROVIDER_URL =',PROVIDER_URL )
+       
         let web3 = new Web3(new Web3.providers.HttpProvider(PROVIDER_URL))
         let converter = new EthConverter();
         let validator = new Validator();
@@ -52,10 +52,7 @@ let GasLimit = 21000
     }
     _getChainId(){
         let chainId = isProduction?1:11155111
-        console.log('chainId', chainId)
-        //return this.app.isProduction()?1:11155111;
-        //return 11155111
-        return chainId
+                return chainId
     }
  
     _formatTransactionsParams( to,value,data=""){ 
@@ -122,8 +119,7 @@ let GasLimit = 21000
             try {             
              let address = await this.getAddress() 
              let nonce =await this.provider.eth.getTransactionCount(address);
-             //let nonce = await this.web3.eth.getTransactionCount(address)
-              return resolve(nonce)   
+                 return resolve(nonce)   
             } catch (error) {
                 return reject(error)
             }
@@ -139,7 +135,7 @@ let GasLimit = 21000
                     let txHash = data["transactionHash"];
                     return resolve(txHash)
                 }).on("error", (e)=>{console.error(e); return reject(e)})
-                //const txHash = await this._sendSignedTransaction(raw)
+               
                 
             } catch (error) {
                 return reject(error)
@@ -152,7 +148,7 @@ let GasLimit = 21000
             try {
                 
                 let tx = new Transaction(txParams)
-                //console.log(tx)
+               
                 tx.sign(txParams.privateKey)
 
                 let raw = "0x" + tx.serialize().toString('hex')

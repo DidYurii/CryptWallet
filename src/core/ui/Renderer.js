@@ -4,9 +4,11 @@ const { values } = require("../blockchain/erc20/erc20_abi")
 class Renderer{
        constructor(app){
         this.app = app
-       //Renderer.addEventListeners()
-        //this.listenerSetter.setEventListeners()
-        this.qrcode = new QRCode("qrcode");
+        const qrCodeData = "https://example.com"; // Replace with your QR code data
+  const qrCodeContainer = document.getElementById("qrcode"); // Get the QR code container element
+  // Create a new QRCode object and pass the container element and QR code data
+  this.qrcode =new QRCode(qrcode, { text: qrCodeData, width: 136, height: 136 }) 
+ 
        }
 
 
@@ -14,8 +16,7 @@ class Renderer{
         this.renderCurrency()
         this.renderBalance()
         this.renderAddress()
-        //this.renderMakeCode()
-    }
+            }
 
     renderCurrency(){
         let elements = document.getElementsByClassName('currency_symbol')
@@ -51,9 +52,7 @@ class Renderer{
            
                this.renderMakeCode(newaddress)
 
-                 
-          
-       
+           
 
         })
         

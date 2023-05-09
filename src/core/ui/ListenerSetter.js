@@ -8,8 +8,7 @@ class ListenerSetter{
         this.setSendListener()
         this.setChangeCurrencyListener()
         this.setMnemonicListeners()
-        //this.setChangeNetListener()
-       
+             
     }
 
     setSendListener(){
@@ -20,38 +19,27 @@ class ListenerSetter{
                      let amount = document.getElementById('amount').value
                      document.getElementById('send_button').textContent = 'Sending...'
                      document.getElementById('send_button').classList.add("bg-green-500", "hover:bg-green-700");
-                     //document.getElementById('send_button').classList.remove("bg-blue-500", "hover:bg-blue-700");
-                     //console.log(document.getElementById('send_button'))
                      document.getElementById('spin').classList.remove('hidden')
                      document.getElementById('spin').classList.add('inline')
                      let result =  await this.app.sendCurrency(to,amount)
-                     //document.getElementById('send_button').textContent = 'Success'
-                      alert(result);
-                      
-                     //location.reload() 
-                     document.getElementById('send_button').textContent = 'Send Now'
+                          alert(result);
+                      document.getElementById('send_button').textContent = 'Send Now'
                       document.getElementById('send_button').classList.remove("bg-green-500", "hover:bg-green-700");
                       document.getElementById('spin').classList.add('hidden')
                       document.getElementById('spin').classList.remove('inline')
-                    //  document.getElementById('send_button').classList.add( "hover:bg-blue-700");
-                     //"bg-blue-500",
-                     document.getElementById('addressTo').value = ""
-                     document.getElementById("amount").value = ""
+                      document.getElementById('addressTo').value = ""
+                      document.getElementById("amount").value = ""
                      
                      this.app.changeCurrency(this.app.getCurrency())
 
         })
     }
 
-
-
-  
  
     setChangeCurrencyListener(){
         // main menu change currency
         const elements = document.querySelectorAll("#symbol");
-        //console.log(elements)   
-        for (let i = 0; i < elements.length; i++) {
+               for (let i = 0; i < elements.length; i++) {
             elements[i].addEventListener("click", (event) => {
 
                 for (let t = 0; t < elements.length; t++) {
@@ -68,24 +56,16 @@ class ListenerSetter{
                
                       elements[i].classList.replace("text-gray-500", "text-green-500");
                       elements[i].classList.add("border-b-4","border-green-500" );
-
                       elementsM[i].classList.add('bg-green-500' );
-                      
                       let el = event.target;
-                      //console.log(el) 
                       let currency = el.getAttribute("data-value")
-                    // console.log(currency);
                       this.app.changeCurrency(currency);
-                      //console.log("currency=",currency);            
-                
-            })
+                                })
         
         }
            // mobile menu change currency
-        //class=" block text-sm px-2 py-4 text-white border-b-4 border-green-500 font-semibold"
-        const elementsM = document.querySelectorAll("#symbolM");
-        //console.log(elements)   
-        for (let i = 0; i < elementsM.length; i++) {
+               const elementsM = document.querySelectorAll("#symbolM");
+               for (let i = 0; i < elementsM.length; i++) {
             elementsM[i].addEventListener("click", (event) => {
 
                 for (let t = 0; t < elementsM.length; t++) {
@@ -96,8 +76,7 @@ class ListenerSetter{
                 if (elements[t].classList.contains("text-green-500")) {
                     elements[t].classList.replace("text-green-500", "text-gray-500");
                     elements[t].classList.remove("border-b-4","border-green-500" );
-                    //elements[t].classList.toggle("border-green-500");
-                            
+                                         
             }
 
             }

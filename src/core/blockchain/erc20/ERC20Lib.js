@@ -1,16 +1,6 @@
-//const { require } = require("yargs");
-//const Transaction = require("ethereumjs-tx")
 const EthLib = require('../eth/EthLib')
 const Converter = require('/src/core/helpers/Erc20Converter')
-
 const ERC20_ABI = require('./erc20_abi');
-//const { reject } = require('q');
-//let GWEI = 10**9
-//let GasPrice = 100*GWEI
-//let GasLimit = 30000
-//let address = process.env.ETH_Address
-//let PROVIDER_URL = process.env.PROVIDER_URL
-//let privateKey = process.env.ETH_PK
 const contractAddress = process.env.ERC20_CONTRACT_ADDRESS   
 const GAS_LIMIT = 300000;
 const DECIMALS = 8
@@ -23,27 +13,6 @@ class ERC20Lib extends EthLib {
         this.setContract()
         this.converter = new Converter()
     }
-
-
-    // getAddress(){
-    //     return new Promise(async (resolve, reject)=>{
-    //         try {
-    //             return resolve(address)
-    //         } catch (error) {
-    //             return reject(error)
-    //         }
-    //     })
-    // }
-
-    // getPrivatKey(){
-    //     return new Promise(async (resolve, reject)=>{
-    //         try {
-    //             return resolve(privateKey)
-    //         } catch (error) {
-    //             return reject(error)
-    //         }
-    //     })
-    // }
 
     setContract(){
         this.contract = this.composeContract()
@@ -108,7 +77,6 @@ class ERC20Lib extends EthLib {
             }
         });
     }
-
 
 
     toDecimals(amount){
